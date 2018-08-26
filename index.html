@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>灰色云商店</title>
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="http://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+ </head>
+
+  <body class="mdui-theme-primary-grey">
+
+<div class="mdui-appbar">
+  <div class="mdui-toolbar mdui-color-theme-900">
+    <a href="javascript:;" class="mdui-typo-title">灰色云应用商店</a>
+    <div class="mdui-toolbar-spacer"></div>
+  </div>
+</div>
+    <div class="mdui-p-a-2">
+<div class="mdui-typo-title">全部</div>
+
+<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-row-xl-5 mdui-grid-list">
+  <div class="mdui-col">
+      
+	  <div class="mdui-card mdui-hoverable mdui-ripple a" style="margin-top:16px;" is="MCDrink">
+  <div class="mdui-card-header">
+    <img class="mdui-card-header-avatar" src="http://q1.qlogo.cn/g?b=qq&nk=2970046657&s=4"/>
+    <div class="mdui-card-header-title">Ms.Vegetable Ask</div>
+    <div class="mdui-card-header-subtitle">github.com/greyCloudTeam</div>
+  </div>
+  
+  <div class="mdui-card-media">
+    <img src="MCDrink/index.jpg"/>
+    <div class="mdui-card-media-covered mdui-card-media-covered-transparent">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">MCDrink-1.1</div>
+        <div class="mdui-card-primary-subtitle">一款强大的minecraft服务器压测程序</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:16px;margin-right:16px;margin-left:16px;">
+  <div class="mdui-chip">
+  <span class="mdui-chip-title">开源</span>
+	</div>
+	<div class="mdui-chip">
+  <span class="mdui-chip-title">最近更新</span>
+</div>
+<div class="mdui-chip">
+  <span class="mdui-chip-title">长期更新</span>
+</div>
+</div>
+  <div class="mdui-card-content">MCDrink是一款功能丰富，威力强大的minecraft跨平台压测程序，主要以吸流量为主，专门针对有流量限制的服务器</div>
+  </div>
+	  
+  </div>
+</div>
+
+</div>
+	<div class="mdui-dialog" id="example-4" style="width:100%;height:100%;max-width:100%;max-height:100%;border-radius:0px">
+	<div class="mdui-dialog-title" id="title">MCDrink</div>
+		<div class="mdui-dialog-content" id="detail">
+		
+		
+		</div>
+		<div class="mdui-dialog-actions">
+			<button class="mdui-btn mdui-ripple" mdui-dialog-close>返回</button>
+			<button class="mdui-btn mdui-ripple" id="download" mdui-dialog-close>下载</button>
+		</div>
+	</div>
+	
+	<div class="mdui-dialog" id="xy">
+  <div class="mdui-dialog-title">灰色云团队软件下载协议</div>
+  <div class="mdui-dialog-content">这是灰色云团队软件下载协议，凡是下载灰色云团队的作品之前，都需要阅读并遵守本协议。如果在没有阅读本协议的情况下获得到灰色云团队的作品，均为通过非法途径获得<br>
+  1.禁止转载灰色云团队的作品，不是从灰色云应用商店上下载的灰色云团队的作品一律都是通过非法途径获取的。你甚至不能将灰色云团队的作品推荐给好友等，所有灰色云团队的作品必须是从灰色云应用商店上获取的<br>
+  2.禁止反编译，或模仿灰色云团队的作品，如果是开源的作品，你可以任意查看它的代码。如果你想复制或借鉴灰色云团队的开源的作品的源码，那么请注明出处<br>
+  3.上面的两条是你必须要遵守的，如果你不遵守，我们能做的只能是将你的信息以及不遵守的证据公布<br>
+  4.灰色云团队的作品来自于灰色云团队的每个成员，除了需要遵守本协议，还需要遵守每个作品自己的协议<br>
+  5.请勿乱喷灰色云团队的作品
+  </div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple" mdui-dialog-close>不同意此协议</button>
+    <button class="mdui-btn mdui-ripple" id="continue" mdui-dialog-close>同意此协议</button>
+  </div>
+</div>
+	
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="http://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+	<script>
+	file=null
+	file="";
+	$(".a").click(function(){
+		var tab = new mdui.Dialog('#example-4');
+		tab.open();
+		$("#example-4").css("height","100%");
+		$("#example-4").css("top","0px");
+		var name=$(this).attr("is");
+		$("#title").html(name);
+		var de=$.ajax({url:name+"/detail.html",async:false});
+		$("#detail").html(de.responseText);
+		tab.handleUpdate()
+	});
+	$("#download").click(function(){
+		var tab = new mdui.Dialog('#example-4');
+		file=$("#link").attr("link");
+		tab.close();
+		var tab1 = new mdui.Dialog('#xy');
+		tab1.open();
+	});
+	$("#continue").click(function(){
+		window.open(file);
+	});
+	</script>
+  </body>
+
+</html>
