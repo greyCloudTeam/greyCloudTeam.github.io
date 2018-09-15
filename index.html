@@ -25,6 +25,38 @@
 <div class="mdui-typo-title">全部</div>
 
 <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-row-xl-5 mdui-grid-list">
+	
+	    <div class="mdui-col">
+      
+	  <div class="mdui-card mdui-hoverable mdui-ripple a" style="margin-top:16px;" is="fuckDdos">
+  <div class="mdui-card-header">
+    <img class="mdui-card-header-avatar" src="http://q1.qlogo.cn/g?b=qq&nk=2970046657&s=4"/>
+    <div class="mdui-card-header-title">Ms.Vegetable Ask</div>
+    <div class="mdui-card-header-subtitle">github.com/greyCloudTeam</div>
+  </div>
+  
+  <div class="mdui-card-media">
+    <img src="fuckDdos/index.jpg"/>
+    <div class="mdui-card-media-covered">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">FuckDDOS</div>
+        <div class="mdui-card-primary-subtitle">一款安卓系统上的DDOS软件</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:16px;margin-right:16px;margin-left:16px;">
+  <div class="mdui-chip">
+  <span class="mdui-chip-title">开源</span>
+	</div>
+<div class="mdui-chip">
+  <span class="mdui-chip-title">最近更新</span>
+</div>
+</div>
+  <div class="mdui-card-content">FuckDDOS是一款安卓系统上的DDOS软件，可以让你在安卓系统上进行对服务器的压测，界面干净，无广告</div>
+  </div>
+	  
+  </div>
+	
   <div class="mdui-col">
       
 	  <div class="mdui-card mdui-hoverable mdui-ripple a" style="margin-top:16px;" is="MCDrink">
@@ -94,36 +126,7 @@
 	  
   </div>
   
-    <div class="mdui-col">
-      
-	  <div class="mdui-card mdui-hoverable mdui-ripple a" style="margin-top:16px;" is="fuckDdos">
-  <div class="mdui-card-header">
-    <img class="mdui-card-header-avatar" src="http://q1.qlogo.cn/g?b=qq&nk=2970046657&s=4"/>
-    <div class="mdui-card-header-title">Ms.Vegetable Ask</div>
-    <div class="mdui-card-header-subtitle">github.com/greyCloudTeam</div>
-  </div>
-  
-  <div class="mdui-card-media">
-    <img src="fuckDdos/index.jpg"/>
-    <div class="mdui-card-media-covered">
-      <div class="mdui-card-primary">
-        <div class="mdui-card-primary-title">FuckDDOS-1.4</div>
-        <div class="mdui-card-primary-subtitle">一款安卓系统上的DDOS软件</div>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top:16px;margin-right:16px;margin-left:16px;">
-  <div class="mdui-chip">
-  <span class="mdui-chip-title">开源</span>
-	</div>
-<div class="mdui-chip">
-  <span class="mdui-chip-title">停更</span>
-</div>
-</div>
-  <div class="mdui-card-content">FuckDDOS是一款安卓系统上的DDOS软件，可以让你在安卓系统上进行对服务器的压测，界面干净，无广告</div>
-  </div>
-	  
-  </div>
+
   
   
       <div class="mdui-col">
@@ -191,6 +194,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="http://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
 	<script>
+		
 	file=null
 	file="";
 	$(".a").click(function(){
@@ -214,6 +218,18 @@
 	$("#continue").click(function(){
 		window.open(file);
 	});
+	var zp=window.location.hash;
+		if(zp!=""){
+			var tab = new mdui.Dialog('#example-4');
+		tab.open();
+		var name=zp
+		$("#title").html(name);
+		var de=$.ajax({url:name+"/detail.html",async:false});
+		$("#detail").html(de.responseText);
+		tab.handleUpdate()
+		$("#example-4").css("height","100%");
+		$("#example-4").css("top","0px");
+        }
 	</script>
   </body>
 
