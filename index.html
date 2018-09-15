@@ -219,7 +219,9 @@
 		window.open(file);
 	});
 	var zp=window.location.hash;
-		if(zp!=""){
+		if(zp!=""&&zp!="#"){
+			var arr=zp.split("&");
+			zp=arr[0].replace("#","");
 			var tab = new mdui.Dialog('#example-4');
 		tab.open();
 		var name=zp
