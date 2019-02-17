@@ -189,7 +189,7 @@
     <button class="mdui-btn mdui-ripple" id="continue" mdui-dialog-close>同意此协议</button>
   </div>
 </div>
-	
+	<a id="downA" href="" download style="width:0px;height:0px;"><span id="downFile"></span></a>
     <!-- Bootstrap core JavaScript -->
     <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
@@ -217,6 +217,7 @@
 		tab1.open();
 	});
 	$("#continue").click(function(){
+		/*
 		var $eleForm = $("<form method='get'></form>");
 
             	$eleForm.attr("action",file);
@@ -227,6 +228,9 @@
             	$eleForm.submit();
 		//$eleForm.remove();
 		//window.open(file);
+		*/
+		$("#downA").attr("href",file);
+    		$("#downFile").click();
 	});
 	var zp=window.location.hash;
 	if(zp!=""&&zp!="#"){
