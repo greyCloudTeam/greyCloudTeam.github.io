@@ -222,20 +222,20 @@
 	if(zp!=""&&zp!="#"){
 		var arr=zp.split("&");
 		zp=arr[0].replace("#","");
+		console.log(zp);
 		if(zp=="andorid_app"){
 			//called by hanyi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			$("#shop_bar").hide();
-			//return false;
 		}else{
 			var tab = new mdui.Dialog('#example-4');
-		tab.open();
-		var name=zp
-		$("#title").html(name);
-		var de=$.ajax({url:name+"/detail.html",async:false});
-		$("#detail").html(de.responseText);
-		tab.handleUpdate()
-		$("#example-4").css("height","100%");
-		$("#example-4").css("top","0px");
+			tab.open();
+			var name=zp
+			$("#title").html(name);
+			var de=$.ajax({url:name+"/detail.html",async:false});
+			$("#detail").html(de.responseText);
+			tab.handleUpdate()
+			$("#example-4").css("height","100%");
+			$("#example-4").css("top","0px");
 		}
         }
 	</script>
