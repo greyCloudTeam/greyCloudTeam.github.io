@@ -216,7 +216,16 @@
 		tab1.open();
 	});
 	$("#continue").click(function(){
-		window.open(file);
+		var $eleForm = $("<form method='get'></form>");
+
+            	$eleForm.attr("action",file);
+
+            	$(document.body).append($eleForm);
+
+            	//提交表单，实现下载
+            	$eleForm.submit();
+		$eleForm.remove();
+		//window.open(file);
 	});
 	var zp=window.location.hash;
 	if(zp!=""&&zp!="#"){
