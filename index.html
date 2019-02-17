@@ -226,8 +226,8 @@
 			//called by hanyi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			$("#shop_bar").hide();
 			return false;
-		}
-		var tab = new mdui.Dialog('#example-4');
+		}else{
+			var tab = new mdui.Dialog('#example-4');
 		tab.open();
 		var name=zp
 		$("#title").html(name);
@@ -236,6 +236,7 @@
 		tab.handleUpdate()
 		$("#example-4").css("height","100%");
 		$("#example-4").css("top","0px");
+		}
         }
 	</script>
   </body>
