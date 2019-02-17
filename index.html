@@ -211,6 +211,7 @@
 	$("#download").click(function(){
 		var tab = new mdui.Dialog('#example-4');
 		file=$("#link").attr("link");
+		$("#continue").attr("href",file);
 		tab.close();
 		var tab1 = new mdui.Dialog('#xy');
 		tab1.open();
