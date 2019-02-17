@@ -197,6 +197,8 @@
 		
 	file=null
 	file="";
+	isAndroid=null;
+	isAndroid=false;
 	$(".a").click(function(){
 		var tab = new mdui.Dialog('#example-4');
 		tab.open();
@@ -229,11 +231,12 @@
 		//$eleForm.remove();
 		//window.open(file);
 		*/
+		if(isAndroid){
 		$("#downA").attr("href",file);
     		$("#downFile").click();
-		$("#downFile").click();
-		$("#downFile").click();
-		$("#downFile").click();
+		}else{
+			window.open(file);
+		}
 	});
 	var zp=window.location.hash;
 	if(zp!=""&&zp!="#"){
@@ -243,6 +246,7 @@
 		if(zp=="andorid_app"){
 			//called by hanyi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			$("#shop_bar").hide();
+			isAndroid=true;
 		}
 		if(zp!="andorid_app"){
 			var tab = new mdui.Dialog('#example-4');
