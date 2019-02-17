@@ -15,7 +15,7 @@
 
   <body class="mdui-theme-primary-grey">
 
-<div class="mdui-appbar">
+<div class="mdui-appbar" id="#shop_bar">
   <div class="mdui-toolbar mdui-color-theme-900">
     <a href="javascript:;" class="mdui-typo-title">灰色云应用商店</a>
     <div class="mdui-toolbar-spacer"></div>
@@ -219,10 +219,14 @@
 		window.open(file);
 	});
 	var zp=window.location.hash;
-		if(zp!=""&&zp!="#"){
-			var arr=zp.split("&");
-			zp=arr[0].replace("#","");
-			var tab = new mdui.Dialog('#example-4');
+	if(zp!=""&&zp!="#"){
+		var arr=zp.split("&");
+		zp=arr[0].replace("#","");
+		if(zp=="andorid_app"){
+			//called by hanyi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			$("#shop_bar").hide();
+		}
+		var tab = new mdui.Dialog('#example-4');
 		tab.open();
 		var name=zp
 		$("#title").html(name);
